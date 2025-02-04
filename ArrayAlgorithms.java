@@ -1,7 +1,7 @@
 public class ArrayAlgorithms {
 
     public static void main(String[] args) {
-            int[] numbers = {1, 2, 3, 4, 5, 5, 8, 4, 3, 3};
+            int[] numbers = {1, 2, 3, 4, 5, 5, 8, 4, 3, 3, 4, 4, 4};
 
             // print elements
             System.out.println("All Elements:");
@@ -61,7 +61,24 @@ public class ArrayAlgorithms {
                     bigIndex = i;
                 }
             }
-            System.out.println(bigIndex);
+            // System.out.println(bigIndex);
+
+
+            int biggestIndex = 0;
+            int mostCommon = numbers[0];
+            for (int num : numbers) {
+                int commonCount = 0;
+                for (int num2: numbers) {
+                    if (num == num2) {
+                        commonCount++;
+                    }
+                }
+                if (commonCount > mostCommon) {
+                    mostCommon = commonCount;
+                    biggestIndex = num;
+                }
+            }
+            System.out.println(biggestIndex);
 
             System.out.println("");
 
